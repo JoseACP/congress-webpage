@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.banner{
+    background-color: red;
+    background-image: url("../img/banner.jpg");
+    height: 400px;
+    background-position: center;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.banner div{
+    /* margin: 150px 50px; */
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40%;
+    clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
+
+    
+    /* padding: 20px; */
+}
+
+@media (max-width: 600px) {
+    
+    .banner div{
+        width: 100%;
+        clip-path: none;
+    }
+
+  }
+
+.home-intro{
+    padding: 40px 100px;
+    font-size: 25px;
+}
+
+.home-intro-title{
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.home-intro-bttn{
+
+    margin-top: 25px;
+
+}
+
+.home-intro-bttn a{
+    text-decoration: none;
+    color: white;
+    padding: 8px 20px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.home-intro-bttn a:hover{
+    background-color: white;
+    color: black;
+    border-radius: 0;
+}
+
+.home-section{
+    margin: 8px 30px;
+    padding: 20px;
+    /* border: 1px solid rgb(58, 58, 58); */
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+    background-color: rgb(160, 160, 160);
+
+    
+}
+
+.home-section-content{
+    width: 60%;
+}
+
+.home-section-title{
+    font-size: 30px;
+}
+
+.home-section p{
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.home-section a{
+
+    background-color: black;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    border: 1px solid black;
+    transition: .5s;
+
+}
+
+.home-section a:hover{
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0;
+
+}
+
+.section-img{
+    height: 200px;
+    width: 300px;
+    background-color: gray;
+    /* background-image: url(../img/prot.jpg);
+    background-position: center; */
+    border-radius: 15px;
+    flex-grow: 1;
+    background-repeat: no-repeat;
+}
+
+.section-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+@media (max-width: 600px) {
+    
+    .home-section{
+        display: block;
+    }
+
+    .section-img{
+        margin-top: 30px;
+    }
+
+    .home-section-content{
+        width: 100%;
+    }
+
+  }
+
+/* Cartas de Conferencistas */
+
+.conferencistas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.conferencistas-t{
+    margin: 15px 30px;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+.conferencista{
+    color: black;
+    height: 400px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid gray;
+    box-shadow: 4px 0px 15px 5px #B0B0B0;
+    transition: .5s;
+    cursor: pointer;
+    margin: 10px 30px;
+}
+
+.conferencista:hover{
+    box-shadow: 4px 0px 15px 5px greenyellow;
+}
+
+.conferencista-img{
+    width: 200px;
+    height: 50%;
+}
+
+.conferencista-img img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.c-info{
+    margin-top: 25px;
+    text-align: center;
+}
+
+.c-info p{
+
+  color: rgb(65, 65, 65);
+
+}
+
+.c-info div{
+    font-weight: bold;
+    font-size: 20px;
+}
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="proto_form.css" />
+    <title>Formulario Prototipos</title>
+  </head>
+  <body>
+    <!-- Botón volver -->
+    <div class="wrap">
+     <button class="button" ><a href="../index.php">Volver</a></button>
+    </div>
+        <!--  -->
+    <div class="login-page">
+      <div class="form">
+        <form action="enviarp.php" method="POST" class="login-form" enctype="multipart/form-data">
+          <h4>Nombre de los participantes:</h4>
+          <input type="text" placeholder="Participante 1" name="n_p1" id="n_p1" required/>
+          <input type="text" placeholder="Participante 2" name="n_p2" id="n_p2" required/>
+          <input type="text" placeholder="Participante 3" name="n_p3" id="n_p3" required/>
+          <h4>Email principal:</h4>
+          <input type="text" placeholder="Email" name="email" id="email" required/>
+          <h4>Asesor:</h4>
+          <input type="text" placeholder="Nombre completo" name="n_asesor" id="n_asesor" required/>
+          <h4>Institución:</h4>
+          <input type="text" placeholder="Nombre" name="institucion" id="institucion" required/>
+          <h4>País:</h4>
+          <div class="select" id="pais">
+            <select name="pais">
+              <option value="Mexico" id="mex">México </option>
+              <option value="Colombia" id="col">Colombia</option>
+              <option value="Argentina" id="ar">Argentina</option>
+              <option value="Ecuador" id="ec">Ecuador</option>
+              <option value="Peru" id="pe">Perú</option>
+            </select>
+          </div>
+          <h4>Prototipo:</h4>
+          <input type="text" placeholder="Nombre" name="prototipo" id="prototipo" required/>
+          <input type="text" placeholder="Categoría" name="categoria" id="categoria" required/>
+          <h4>Modalidad</h4>
+          <div class ="select" id="modalidad" >
+            <select name="modalidad">
+              <option value="diseño" id="diseño">Diseño</option>
+              <option value="tecnologia" id="tecnologia">Tecnología</option>
+            </select>
+          </div>
+          <!--Subir pdf-->
+          <p class="p_subir">Sube aquí tu archivo en formato pdf:</p>
+          <p class="file_chosen"> <input id="archivoInput" type="file" name="adjunto" id="archivo-adjunto" onchange="return validarExt()"></p>
+          <!-- -->
+
+          <button type="submit" name="register" id="enviar">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      $('.message a').click(function(){
+      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+      });
+    </script>
+  </body>
+</html>
+
+<script type="text/javascript">
+
+  function validarExt()
+  {
+      var archivoInput = document.getElementById('archivoInput');
+      var archivoRuta = archivoInput.value;
+      var extPermitidas = /(.pdf)$/i;
+      if(!extPermitidas.exec(archivoRuta)){
+          alert('Asegurese de haber seleccionado un PDF');
+          archivoInput.value = '';
+          return false;
+      }
+  }
+  </script>

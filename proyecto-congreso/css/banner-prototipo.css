@@ -1,0 +1,32 @@
+.banner{
+    background-color: red;
+    background-image: url("../img/prototype.jpg");
+    height: 400px;
+    background-position: center;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.banner div{
+    /* margin: 150px 50px; */
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40%;
+    clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
+
+    
+    /* padding: 20px; */
+}
+
+@media (max-width: 600px) {
+    
+    .banner div{
+        width: 100%;
+        clip-path: none;
+    }
+
+  }

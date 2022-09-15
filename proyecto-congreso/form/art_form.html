@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="art_form.css" />
+    <title>Formulario Artículos</title>
+  </head>
+  <body>
+    <!-- Botón volver -->
+    <div class="wrap">
+      <button class="button"><a href="../index.php">Volver</a></button>
+    </div>
+    <!--  -->
+    <div class="login-page">
+      <div class="form">
+        <form action="enviara.php" method="POST" class="login-form" enctype="multipart/form-data">
+          <h4>Nombre del articulo:</h4>
+          <input type="text" placeholder="nombre" name="articulo" id="articulo" required/>
+          <h4>Nombre de los autores:</h4>
+          <input type="text" placeholder="Autor principal" name="n_a1" id="n_a1" required/>
+          <!-- Radio buttons-->
+          <label for='ocupacion' class="ocupacion">Ocupación del autor principal:</label>
+          <p class='container'>
+            <label><input type='radio' name='ocupacion' value='Estudiante' />Estudiante</label>
+            <label><input type='radio' name='ocupacion' value='Maestro' />Maestro</label>
+            </p>
+            <!---->
+            <input type="text" placeholder="Autor 2" name="n_a2" id="n_a2" required/>
+            <input type="text" placeholder="Autor 3" name="n_a3" id="n_a3" required/>
+          <h4>Email principal:</h4>
+          <input type="text" placeholder="Email" name="email" id="email" required/>
+          <h4>Institución:</h4>
+          <input type="text" placeholder="Nombre" name="institucion" id="institucion" required/>
+          <h4>País:</h4>
+          <!--Select paises-->
+          <div class="select" id="pais">
+            <select name="pais">
+              <option value="Mexico" id="mex">México </option>
+              <option value="Colombia" id="col">Colombia</option>
+              <option value="Argentina" id="ar">Argentina</option>
+              <option value="Ecuador" id="ec">Ecuador</option>
+              <option value="Peru" id="pe">Perú</option>
+            </select>
+          </div>
+          <!---->
+          <!--Subir pdf-->
+          <p class="p_subir">Sube aquí tu artículo en formato pdf:</p>
+          <p class="file_chosen"> <input id="archivoInput" type="file" name="adjunto" id="archivo-adjunto" onchange="return validarExt()"></p>
+          <!-- -->
+          <button type="submit" name="enviar" id="enviar">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">
+
+      function validarExt()
+      {
+          var archivoInput = document.getElementById('archivoInput');
+          var archivoRuta = archivoInput.value;
+          var extPermitidas = /(.pdf)$/i;
+          if(!extPermitidas.exec(archivoRuta)){
+              alert('Asegurese de haber seleccionado un PDF');
+              archivoInput.value = '';
+              return false;
+          }
+      }
+      </script>
+    <script>
+      $('.message a').click(function(){
+      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+      });
+    </script>
+  </body>
+</html>

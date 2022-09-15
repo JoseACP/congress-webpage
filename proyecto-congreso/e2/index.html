@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <h1 class="pg">Title Change later</h1>
+<div class="fp"> 
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, est? Dolore totam porro natus doloremque eum error nulla tenetur aut officia, quas dolorum placeat, repudiandae, ad nostrum architecto maxime repellendus.
+    Accusantium praesentium non quae ex tenetur corporis vel debitis ipsum, placeat nisi eligendi nemo commodi earum asperiores quasi perspiciatis adipisci et ad consequuntur maiores ipsa harum? Numquam enim est voluptatem?
+    Earum totam officiis esse! Blanditiis eaque aperiam dolorum esse obcaecati alias quo dolorem rerum temporibus ad, expedita dicta, distinctio doloremque natus corporis ullam vitae? Alias assumenda expedita debitis eum atque.
+    Tenetur cumque sint, et alias eius quae corrupti! Vel quibusdam deserunt ducimus sit repellendus voluptatem neque ad enim laboriosam tempora sequi consequuntur rerum eius corrupti, tempore, velit ipsam blanditiis voluptas.
+    Voluptates, cupiditate? Fugit ipsum doloribus recusandae perspiciatis nihil. Sunt, reprehenderit ab fugiat culpa dignissimos eveniet explicabo, excepturi corrupti esse et repudiandae dolorem labore ea magni atque similique perferendis sequi. Dolore.
+    Nostrum animi quas accusantium necessitatibus deleniti nam velit eaque quisquam officiis tempora! Ea ullam tenetur obcaecati aperiam. Eaque sit nemo cumque praesentium, voluptate quas corrupti tenetur dolorum molestiae, nostrum doloremque?
+    Eos tempora amet qui rerum sequi laudantium culpa animi unde, quia veritatis reiciendis ipsam hic rem possimus magnam debitis ut voluptatem dolorum, suscipit, molestias iusto incidunt commodi! Obcaecati, ratione odio!
+    Reprehenderit, accusamus perspiciatis. Blanditiis quia distinctio quis, cumque labore sapiente veniam sint eius quam illo delectus! Impedit provident consequatur tenetur, sunt doloremque architecto nulla cum atque pariatur dicta optio laudantium.
+    Ipsa et doloremque ratione eos quaerat obcaecati esse commodi ab suscipit, laboriosam magni officiis, quod rem, ad mollitia? Adipisci alias natus optio perferendis dolorum numquam velit placeat impedit omnis magnam?
+    Deserunt natus dolores in beatae blanditiis accusamus, nobis repellendus ab quisquam iure possimus? Modi consequuntur libero quos similique quidem consectetur odio unde delectus assumenda esse? Sequi natus molestiae aperiam eius!</p>
+</div>
+<form id="form1" action="enviar.php" method="post" name="form1" class="form-box" enctype="multipart/form-data">
+
+    <h2 class="form-title">Registro de articulo </h2>
+    <p>Nombre <input type="text" placeholder="" name="nombre" id="nombre" required></p>
+    <p>Email <input type="email" name="email" id="email" required></p>
+    <p>País </p>
+    <label></label>
+    <input type="radio"  name="pais" value="Colombia" >Colombia
+    <label></label>
+    <input type="radio" name="pais" value="México">México
+    <p>Puesto </p>
+    <label></label>
+    <input type="radio"  name="puesto" value="Maestro">Maestro
+    <label></label>
+    <input type="radio" name="puesto" value="Alumno">Alumno
+    <label ></label>
+    <p>Sube tu articulo <input id="archivoInput" type="file" name="adjunto" id="archivo-adjunto" onchange="return validarExt()"></p>
+
+    <input type="submit" name="register">
+</form>
+<label></label>
+<div>
+    <h2>Documentos necesarios</h2>
+    <a href="assets/Convocatoria-Congreso Internacional 2022..doc">Convocatoria-Congreso</a>
+    <br>
+    <a href="assets/Formato_Articulo_Congreso nternacional 2022.docx">Formato de articulo</a>
+</div>
+</div>
+<div id="visorArchivo">
+<!--Aqui se va a visualizar nuetro archivo-->
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+    function validarExt()
+    {
+        var archivoInput = document.getElementById('archivoInput');
+        var archivoRuta = archivoInput.value;
+        var extPermitidas = /(.pdf)$/i;
+        if(!extPermitidas.exec(archivoRuta)){
+            alert('Asegurese de haber seleccionado un PDF');
+            archivoInput.value = '';
+            return false;
+        }
+    
+        else
+        {
+            //PRevio del PDF
+            if (archivoInput.files && archivoInput.files[0]) 
+            {
+                var visor = new FileReader();
+                visor.onload = function(e) 
+                {
+                    document.getElementById('visorArchivo').innerHTML = 
+                    '<embed src="'+e.target.result+'" width="500" height="375" />';
+                };
+                visor.readAsDataURL(archivoInput.files[0]);
+            }
+        }
+    }
+    </script>
